@@ -182,12 +182,6 @@
                             "optional": true
                         },
                         {
-                            "name": "ignore_dragging",
-                            "description": "Array of node names\n     that sould not trigger dragging, by default is `['INPUT', 'TEXTAREA',\n     'SELECT', 'BUTTON']`. If a function is used return true to ignore dragging.",
-                            "type": "Object|Function",
-                            "optional": true
-                        },
-                        {
                             "name": "offset_left",
                             "description": "Offset added to the item\n    that is being dragged.",
                             "type": "Offset_left",
@@ -212,6 +206,11 @@
                             "optional": true
                         }
                     ]
+                },
+                {
+                    "name": "[options.ignore_dragging] Array of node names\n     that sould not trigger dragging, by default is `['INPUT', 'TEXTAREA',\n     'SELECT', 'BUTTON']",
+                    "description": "`. If a function is used return true to ignore dragging.",
+                    "type": "Object|Function"
                 }
             ],
             "return": {
@@ -295,12 +294,6 @@
                             "optional": true
                         },
                         {
-                            "name": "autogenerate_stylesheet",
-                            "description": "If true, all the\n           CSS required to position all widgets in their respective columns\n           and rows will be generated automatically and injected to the\n           `<head>` of the document. You can set this to false, and write\n           your own CSS targeting rows and cols via data-attributes like so:\n           `[data-col=\"1\"] { left: 10px; }`",
-                            "type": "Boolean",
-                            "optional": true
-                        },
-                        {
                             "name": "avoid_overlapped_widgets",
                             "description": "Avoid that widgets loaded\n           from the DOM can be overlapped. It is helpful if the positions were\n           bad stored in the database or if there was any conflict.",
                             "type": "Boolean",
@@ -351,12 +344,6 @@
                                     "optional": true
                                 },
                                 {
-                                    "name": "axes",
-                                    "description": "Axes in which widgets can be\n                   resized. Possible values: ['x', 'y', 'both'].",
-                                    "type": "Array",
-                                    "optional": true
-                                },
-                                {
                                     "name": "handle_append_to",
                                     "description": "Set a valid CSS\n                   selector to append resize handles to.",
                                     "type": "String",
@@ -366,18 +353,6 @@
                                     "name": "handle_class",
                                     "description": "CSS class name used\n                   by resize handles.",
                                     "type": "String",
-                                    "optional": true
-                                },
-                                {
-                                    "name": "max_size",
-                                    "description": "Limit widget dimensions\n                   when resizing. Array values should be integers:\n                   `[max_cols_occupied, max_rows_occupied]`",
-                                    "type": "Array",
-                                    "optional": true
-                                },
-                                {
-                                    "name": "min_size",
-                                    "description": "Limit widget dimensions\n                   when resizing. Array values should be integers:\n                   `[min_cols_occupied, min_rows_occupied]`",
-                                    "type": "Array",
                                     "optional": true
                                 },
                                 {
@@ -401,6 +376,26 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "name": "[options.autogenerate_stylesheet] If true, all the\n           CSS required to position all widgets in their respective columns\n           and rows will be generated automatically and injected to the\n           `<head>` of the document. You can set this to false, and write\n           your own CSS targeting rows and cols via data-attributes like so:\n           `[data-col=\"1\"]",
+                    "description": "{ left: 10px; }`",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "[options.resize.axes] Axes in which widgets can be\n                   resized. Possible values: ['x', 'y', 'both']",
+                    "description": ".",
+                    "type": "Array"
+                },
+                {
+                    "name": "[options.resize.max_size] Limit widget dimensions\n                   when resizing. Array values should be integers:\n                   `[max_cols_occupied, max_rows_occupied]",
+                    "description": "`",
+                    "type": "Array"
+                },
+                {
+                    "name": "[options.resize.min_size] Limit widget dimensions\n                   when resizing. Array values should be integers:\n                   `[min_cols_occupied, min_rows_occupied]",
+                    "description": "`",
+                    "type": "Array"
                 }
             ],
             "is_constructor": 1
