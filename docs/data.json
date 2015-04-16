@@ -2,7 +2,7 @@
     "project": {
         "name": "gridster.js",
         "description": "gridster.js, a drag-and-drop multi-column jQuery grid plugin",
-        "version": "v0.6.6",
+        "version": "v0.6.7",
         "url": "http://gridster.net/",
         "logo": "https://ducksboard.com/static/images/svg/logo-ducksboard-black-small.svg"
     },
