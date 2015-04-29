@@ -17,7 +17,7 @@
                 <h1><img src="https://ducksboard.com/static/images/svg/logo-ducksboard-black-small.svg" title="gridster.js"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: v0.6.7</em>
+            <em>API Docs for: v0.6.8</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -91,6 +91,7 @@
  */
 
 ;(function(root, factory) {
+	&#x27;use strict&#x27;;
     if(typeof exports === &#x27;object&#x27;) {
         module.exports = factory(require(&#x27;jquery&#x27;));
     }
@@ -102,7 +103,7 @@
     }
 
 }(this, function($, Coords) {
-
+	&#x27;use strict&#x27;;
     var defaults = {
         colliders_context: document.body,
         overlapping_region: &#x27;C&#x27;
