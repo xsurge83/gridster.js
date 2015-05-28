@@ -1,4 +1,4 @@
-/*! gridster.js - v0.6.8 - 2015-05-20
+/*! gridster.js - v0.6.9 - 2015-05-27
 * http://gridster.net/
 * Copyright (c) 2015 ducksboard; Licensed MIT */
 
@@ -2079,10 +2079,6 @@
 		if (this.options.avoid_overlapped_widgets && !this.can_move_to(
 						{size_x: wgd.size_x, size_y: wgd.size_y}, wgd.col, wgd.row)
 		) {
-			if (!$el.hasClass('.disp_ad')) {
-				$el.remove();
-				return false;
-			}
 			$.extend(wgd, this.next_position(wgd.size_x, wgd.size_y));
 			$el.attr({
 				'data-col': wgd.col,
@@ -5072,7 +5068,7 @@
 ;(function(root, factory) {
 	'use strict';
 	if(typeof exports === 'object') {
-        module.exports = factory(require('jquery'), require('./jquery-gridster.js'));
+        module.exports = factory(require('jquery'), require('./jquery.gridster.js'));
     }
     else if (typeof define === 'function' && define.amd) {
         define(['jquery', 'gridster'], factory);

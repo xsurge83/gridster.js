@@ -17,7 +17,7 @@
                 <h1><img src="https://ducksboard.com/static/images/svg/logo-ducksboard-black-small.svg" title="gridster.js"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: v0.6.8</em>
+            <em>API Docs for: v0.6.9</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -1269,10 +1269,6 @@
 		if (this.options.avoid_overlapped_widgets &amp;&amp; !this.can_move_to(
 						{size_x: wgd.size_x, size_y: wgd.size_y}, wgd.col, wgd.row)
 		) {
-			if (!$el.hasClass(&#x27;.disp_ad&#x27;)) {
-				$el.remove();
-				return false;
-			}
 			$.extend(wgd, this.next_position(wgd.size_x, wgd.size_y));
 			$el.attr({
 				&#x27;data-col&#x27;: wgd.col,
