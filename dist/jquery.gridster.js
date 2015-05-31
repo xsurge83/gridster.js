@@ -1,6 +1,6 @@
-/*! gridster.js - v0.6.9 - 2015-05-27
-* http://gridster.net/
-* Copyright (c) 2015 ducksboard; Licensed MIT */
+/*! gridster.js - v0.6.10 - 2015-05-31
+* https://dsmorse.github.io/gridster.js/
+* Copyright (c) 2015 D.S. Morse; Licensed MIT */
 
 ;(function(root, factory) {
 	'use strict';
