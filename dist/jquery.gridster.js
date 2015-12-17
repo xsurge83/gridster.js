@@ -4707,7 +4707,8 @@
 
 		this.remove_style_tags();
 
-		return this.add_style_tag(styles);
+    /* only add_style_tag if the colWidth and $wrapper.width() are greater than 0 */
+    return (colWidth <= 0 || this.$wrapper.width() <= 0) ? this : this.add_style_tag(styles);
 	};
 
 
