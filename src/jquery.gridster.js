@@ -184,6 +184,7 @@
 			this.min_widget_width = this.options.widget_base_dimensions[0];
 		}
 		this.min_widget_height = this.options.widget_base_dimensions[1];
+		this.is_resizing = false;
 
 		this.min_col_count = this.options.min_cols;
 		this.prev_col_count = this.min_col_count;
@@ -549,6 +550,7 @@
 	 */
 	fn.resize_widget = function ($widget, size_x, size_y, callback) {
 		var wgd = $widget.coords().grid;
+		this.is_resizing = true;
 
 		size_x || (size_x = wgd.size_x);
 		size_y || (size_y = wgd.size_y);
@@ -578,6 +580,8 @@
 		if (callback) {
 			callback.call(this, new_grid_data.size_x, new_grid_data.size_y);
 		}
+
+		this.is_resizing = false;
 
 		return $widget;
 	};
@@ -961,7 +965,9 @@
 			this.move_widget_down($w, diff);
 		}, this));
 
-		this.set_dom_grid_height();
+		if (!this.is_resizing) {
+			this.set_dom_grid_height();
+		}
 
 		return this;
 	};
