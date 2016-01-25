@@ -40,6 +40,7 @@
 				responsive_breakpoint: false,
 				scroll_container: window,
 				shift_larger_widgets_down: true,
+				move_widgets_down_only: false,
 				shift_widgets_up: true,
 				show_element: function($el, callback) {
 					if (callback) {
@@ -1924,7 +1925,19 @@
 				});
 			} else if (wgd.size_x <= player_size_x && wgd.size_y <= player_size_y) {
 				if (!$gr.is_swap_occupied(placeholder_cells.cols[0], wgd.row, wgd.size_x, wgd.size_y) && !$gr.is_player_in(placeholder_cells.cols[0], wgd.row) && !$gr.is_in_queue(placeholder_cells.cols[0], wgd.row, $w)) {
-					swap = $gr.queue_widget(placeholder_cells.cols[0], wgd.row, $w);
+					if($gr.options.move_widgets_down_only){
+						$overlapped_widgets.each($.proxy(function (i, w) {
+							var $w = $(w);
+
+							if ($gr.can_go_down($w) && $w.coords().grid.row === $gr.player_grid_data.row && !$gr.is_in_queue($w.coords().grid.col, wgd.row, $w)) {
+								$gr.move_widget_down($w, $gr.player_grid_data.size_y);
+								$gr.set_placeholder(to_col, to_row);
+							}
+						}));
+					}
+					else{
+						swap = $gr.queue_widget(placeholder_cells.cols[0], wgd.row, $w);
+					}
 				}
 				else if (!$gr.is_swap_occupied(outside_col, wgd.row, wgd.size_x, wgd.size_y) && !$gr.is_player_in(outside_col, wgd.row) && !$gr.is_in_queue(outside_col, wgd.row, $w)) {
 					swap = $gr.queue_widget(outside_col, wgd.row, $w);
@@ -1936,7 +1949,19 @@
 					swap = $gr.queue_widget(wgd.col, outside_row, $w);
 				}
 				else if (!$gr.is_swap_occupied(placeholder_cells.cols[0], placeholder_cells.rows[0], wgd.size_x, wgd.size_y) && !$gr.is_player_in(placeholder_cells.cols[0], placeholder_cells.rows[0]) && !$gr.is_in_queue(placeholder_cells.cols[0], placeholder_cells.rows[0], $w)) {
-					swap = $gr.queue_widget(placeholder_cells.cols[0], placeholder_cells.rows[0], $w);
+					if($gr.options.move_widgets_down_only){
+						$overlapped_widgets.each($.proxy(function (i, w) {
+							var $w = $(w);
+
+							if ($gr.can_go_down($w) && $w.coords().grid.row === $gr.player_grid_data.row && !$gr.is_in_queue(outside_col, wgd.row, $w)) {
+								$gr.move_widget_down($w, $gr.player_grid_data.size_y);
+								$gr.set_placeholder(to_col, to_row);
+							}
+						}));
+					}
+					else{
+						swap = $gr.queue_widget(placeholder_cells.cols[0], placeholder_cells.rows[0], $w);
+					}
 				} else {
 					//in one last attempt we check for any other empty spaces
 					for (var c = 0; c < player_size_x; c++) {
