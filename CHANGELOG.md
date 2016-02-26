@@ -1,3 +1,14 @@
+<a name="v0.7.0"></a>
+## v0.7.0 (2016-02-26)
+
+
+#### Bug Fixes
+
+* Apply fix from #22 to vertical positioning ([dfc64916](http://github.com/dsmorse/gridster.js/commit/dfc649168c5b6a2a230b90a47e19621a6937fc7c))
+* convert from JQury to DOM ([4936ef82](http://github.com/dsmorse/gridster.js/commit/4936ef82c04690fde118c3d54b798ceaf7c376e6))
+* **fn.generate_stylesheet:** only return new stylesheet if colWidth and this.$wrapper.width() are > 0 ([f513793a](http://github.com/dsmorse/gridster.js/commit/f513793a8c0ec63509f6296325a8a7a6e34179f5))
+* **gridster:** Add additiona error checking on widgets removal ([2b0f9963](http://github.com/dsmorse/gridster.js/commit/2b0f9963ef80c9acc6f66545eb53597836e2ebec))
+
 <a name="v0.6.10"></a>
 ### v0.6.10 (2015-05-31)
   * Add Ruby on Rails support 
