@@ -1,4 +1,4 @@
-/*! gridster.js - v0.7.0 - 2016-02-26
+/*! gridster.js - v0.7.0 - 2016-03-29
 * https://dsmorse.github.io/gridster.js/
 * Copyright (c) 2016 ducksboard; Licensed MIT */
 
@@ -2917,9 +2917,7 @@
 					to_row = pp;
 				}
 			}
-			if (this.can_placeholder_be_set(to_col, to_row, player_size_x, player_size_y)) {
-				this.set_placeholder(to_col, to_row);
-			}
+			this.set_placeholder(to_col, to_row);
 		}
 
 		this.w_queue = {};
