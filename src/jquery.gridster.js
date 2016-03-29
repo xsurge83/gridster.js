@@ -2019,9 +2019,7 @@
 					to_row = pp;
 				}
 			}
-			if (this.can_placeholder_be_set(to_col, to_row, player_size_x, player_size_y)) {
-				this.set_placeholder(to_col, to_row);
-			}
+			this.set_placeholder(to_col, to_row);
 		}
 
 		this.w_queue = {};
