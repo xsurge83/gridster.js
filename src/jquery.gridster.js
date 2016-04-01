@@ -3723,10 +3723,6 @@
 			if (this.resize_api) {
 				this.disable_resize();
 			}
-
-			if (this.drag_api) {
-				this.disable();
-			}
 		} else {
 			this.$widgets.css({
 				'margin-top': 'auto',
@@ -3736,10 +3732,6 @@
 			this.$el.removeClass('collapsed');
 			if (this.resize_api) {
 				this.enable_resize();
-			}
-
-			if (this.drag_api) {
-				this.enable();
 			}
 		}
 		return this;
