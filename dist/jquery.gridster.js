@@ -1,4 +1,4 @@
-/*! gridster.js - v0.7.0 - 2016-03-29
+/*! gridster.js - v0.7.0 - 2016-04-01
 * https://dsmorse.github.io/gridster.js/
 * Copyright (c) 2016 ducksboard; Licensed MIT */
 
@@ -4621,10 +4621,6 @@
 			if (this.resize_api) {
 				this.disable_resize();
 			}
-
-			if (this.drag_api) {
-				this.disable();
-			}
 		} else {
 			this.$widgets.css({
 				'margin-top': 'auto',
@@ -4634,10 +4630,6 @@
 			this.$el.removeClass('collapsed');
 			if (this.resize_api) {
 				this.enable_resize();
-			}
-
-			if (this.drag_api) {
-				this.enable();
 			}
 		}
 		return this;
